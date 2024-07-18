@@ -1,0 +1,629 @@
+\documentclass{article} 
+\usepackage{amsmath} 
+\usepackage{siunitx}[=v2]
+\usepackage{booktabs}
+\usepackage{circuitikz} 
+\usepackage{tikz} 
+\usepackage{graphicx}
+\usepackage{pdflscape}
+
+\title{T1 SCIENCE PHASE4 QUESTIONS} % Sets article title
+\author{COMPILED BY EOIN O'DOWD} % Sets authors name
+
+
+\date{\today} % Sets date for date compiled
+\begin{document}
+\maketitle  
+\noindent
+
+\pagebreak
+\begin{tabular}{l c S[table-format=10.9] S[retain-zero-exponent=true]}
+\toprule
+\multicolumn{4}{c}{SI Prefixes} \\
+\toprule
+\addlinespace %\midrule
+Prefix & Symbol & {Multiplication up / division down} & {Notation} \\
+\midrule
+giga  & \si{\giga} & 1000000000 & e9 \\
+mega  & \si{\mega} & 1000000    & e6 \\ 
+kilo  & \si{\kilo} & 1000       & e3 \\
+deca  & \si{\deca} & 10         & e1 \\ 
+\toprule
+  -- & -- & 1 & e0 \\
+\toprule
+deci  & \si{\deci} & 0.1        & e-1 \\
+centi & \si{\centi}& 0.01       & e-2 \\
+milli & \si{\milli}& 0.001      & e-3 \\
+micro & \si{\micro}& 0.000001   & e-6 \\
+nano  & \si{\nano} & 0.000000001& e-9 \\
+angstrom  & \si{\angstrom} & 0.00000000001& e-10 \\
+pico & \si{\pico} & 0.0000000000001& e-12 \\
+\bottomrule
+\end{tabular}
+
+\pagebreak 
+    \section{Alternators} % creates a section
+An 8-pole alternator is driven at a speed of 750rpm. Calculate the frequency of the generated supply?
+ 
+    
+     \begin{equation} % Creates an equation environment and is compiled as math
+     Freq = \frac{RPM}{SECONDS} =
+     \frac{720}{60} = 12.5
+    \end{equation} 
+    \begin{equation} 
+   12.5 * 4 = 50Hz
+    \end{equation} 
+    
+    \section{Alternators} % creates a section
+An alternator is driven at a speed of 900rpm and generates a supply frequency of 60Hz Calculate the number of poles required?
+ 
+      \begin{equation} % Creates an equation environment and is compiled as math
+     poles =  \frac{120 * Hz}{MAX RPM} =
+     \frac{120 * 60}{900} = 8 poles
+    \end{equation} 
+
+    \section{Alternators} % creates a section
+A two-pole alternator is required to generate an emf having a frequency of 50Hz. Calculate the speed the alternator must be driven.? 
+ 
+      \begin{equation} % Creates an equation environment and is compiled as math
+     120 * 50 = 6000 =
+     \frac{6000}{2} = 3000rpm
+    \end{equation} 
+
+     \section{Alternators} % creates a section
+An alternator driven at a speed of 600rpm generates a frequency of 20Hz. Calculate the number of poles in the alternator? 
+ 
+    
+    \begin{equation} % Creates an equation environment and is compiled as math
+     poles =  \frac{120 * Hz}{MAX RPM} =
+     \frac{120 * 20}{600} = 4 poles
+    \end{equation}      
+     
+    \section{Alternators} % creates a section
+A 4-pole alternator is driven at a speed of 1500rpm. Calculate the frequency of the supply? 
+ 
+ 
+    \section{Alternators} % creates a section
+A 12-pole alternator is driven at a speed of 250rpm and produces a frequency of 25Hz. Calculate the new frequency if the alternator speed is increased to 500rpm? 
+ 
+ 
+    \section{Alternators} % creates a section
+Calculate the speed at which a 4-pole alternator must be driven to produce a frequency of 50Hz? 
+ 
+ 
+    \section{Alternators} % creates a section
+Calculate the speed at which an 8-pole alternator must be driven to produce a frequency of 50Hz? 
+         
+    \section{Alternators} % creates a section
+A four-pole alternator is designed to run at 50Hz. What speed must the alternator run to get the desired frequency? 
+ 
+\pagebreak
+ 
+    \section{RL In Parallel} % creates a section    
+A circuit containing a resistor of 11ohm and an inductor of inductance 0.7H are connected in parallel across a 110V, 50Hz supply. Calculate the current in each component of the circuit. 
+
+
+
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 110 @ 50Hz$, i^>=] (0,2)  
+(1,0)to[short] (3,0) 
+(2,2)to[L=$L\SI{0.7}{\henry}$,i>^=$I_L$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[R=$R\SI{11}{\ohm}$,i>^=$I_R$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+  \begin{equation} % Creates an equation environment and is compiled as math
+     X_l = 2\pi fl = 
+     2*\pi * 50 * 0.7 = \SI{219.911}{\ohm} 
+    \end{equation}
+    
+     \begin{equation} % Creates an equation environment and is compiled as math
+     I_l = \frac{V}{R} =
+     \frac{110}{219.911} = 0.50 amps
+    \end{equation} 
+       
+    
+     \begin{equation} % Creates an equation environment and is compiled as math
+     I_r = \frac{V}{R} =
+     \frac{110}{11} = 10 amps
+    \end{equation} 
+    
+         \begin{equation} % Creates an equation environment and is compiled as math
+  I_s = \sqrt I_r^2+I_l^2 =
+  \sqrt 10^2+0.50^2 =
+  10.01 amps
+    \end{equation}    
+
+\pagebreak
+\section{RC In Parallel} % creates a section    
+A circuit consists of a 115ohm resistor in parallel with a 35uF capacitor and is connected to a 240V, 50Hz supply. Calculate the current taken from the supply?
+
+	R = \SI{115}{\ohm}
+	
+	C= \SI{35}{\micro\farad}
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 240 @ 50Hz$, i^>=] (0,2)  
+(1,0)to[short] (3,0) 
+(2,2)to[R=$R\SI{115}{\ohm}$,i>^=$I_R$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[C=$C\SI{35}{\micro\farad}$,i>^=$I_C$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+\begin{equation} % Creates an equation environment and is compiled as math
+     X_c = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000035} = \SI{90.9456}{\ohm}
+    \end{equation}
+       
+         \begin{equation} % Creates an equation environment and is compiled as math
+     I_r = \frac{V}{R} =
+     \frac{240}{90.9456} = 2.638 amps
+    \end{equation} 
+      
+     \begin{equation} % Creates an equation environment and is compiled as math
+     I_r = \frac{V}{R} =
+     \frac{240}{115} = 2.08 amps
+    \end{equation} 
+    
+         \begin{equation} % Creates an equation environment and is compiled as math
+  I_s = \sqrt I_r^2+I_l^2 =
+  \sqrt 2.08^2+2.638^2 =
+  3.359 amps
+    \end{equation}    
+
+\section{RC In Parallel} % creates a section    
+A 42uF capacitor and a 72ohm resistor are connected in parallel across a 100v, 50Hz supply.Calculate the current in each component?
+
+	R = \SI{72}{\ohm}
+	
+	C= \SI{42}{\micro\farad}
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 100 @ 50Hz$, i^>=] (0,2)  
+(1,0)to[short] (3,0) 
+(2,2)to[R=$R\SI{72}{\ohm}$,i>^=$I_R$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[C=$C\SI{42}{\micro\farad}$,i>^=$I_C$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+\begin{equation} % Creates an equation environment and is compiled as math
+     X_c = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000042} = \SI{75.788}{\ohm}
+    \end{equation}
+       
+         \begin{equation} % Creates an equation environment and is compiled as math
+     I_c = \frac{V}{R} =
+     \frac{100}{75.788} = 1.31 amps
+    \end{equation} 
+      
+     \begin{equation} % Creates an equation environment and is compiled as math
+     I_r = \frac{V}{R} =
+     \frac{100}{72} = 1.388 amps
+    \end{equation} 
+    
+         \begin{equation} % Creates an equation environment and is compiled as math
+  I_t = \sqrt I_r^2+I_c^2 =
+  \sqrt 1.388^2+1.31^2 =
+  1.90 amps
+    \end{equation}    
+ \pagebreak   
+\section{RC In Parallel} % creates a section    
+A capacitor takes a current of 2 amps  when it is connected in parallel with a resistor whitch has a current of 1.5amps flowing through it. Both items are connected to a 100v, 50Hz supply. Calculate the current taken from supply?
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 100 @ 50Hz$, i^>=] (0,2)  
+(1,0)to[short] (3,0) 
+(2,2)to[R=$R$,i>^=$I_R$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[C=$C$,i>^=$I_C$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+    
+  \begin{equation} % Creates an equation environment and is compiled as math
+  I_t = \sqrt I_r^2+I_c^2 =
+  \sqrt 1.5^2+2^2 =
+  2.5 amps
+    \end{equation}    
+    
+    
+    \section{RLC In Series} % creates a section    
+Calculate the current flowing in the circuit shown in the diagram ?
+
+	R = \SI{10}{\ohm}
+	
+	l = \SI{0.15}{\henry}
+	
+	C= \SI{100}{\milli\farad}
+	
+
+\begin{circuitikz}[scale=2.5]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s110@50Hz$, i^>=$I_s$] (0,2) -- 
+(0,2)to[C=$C\SI{100}{\micro\farad}$] (2,2) -- 
+(2,2)to[L=$L\SI{0.15}{\henry}$] (2,0) --
+(2,0)to[R, l_=$R\SI{10}{\ohm}$] (0,0)
+;\end{circuitikz}
+
+\begin{equation} % Creates an equation environment and is compiled as math
+     X_l = 2\pi fl = 
+     2*\pi * 50 * 0.15 = \SI{47.123}{\ohm} 
+    \end{equation}
+    
+  
+    
+\begin{equation} % Creates an equation environment and is compiled as math
+     X_c = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.0001} = \SI{31.83}{\ohm}
+    \end{equation}
+    
+
+ 
+         \begin{equation} % Creates an equation environment and is compiled as math
+  X_t = \sqrt R^2+(X_l-X_c)^2 =
+  \sqrt 10^2+(47.123-31.83)^2 =
+  \SI{18.272}{\ohm}
+    \end{equation}  
+    
+    
+     \begin{equation} % Creates an equation environment and is compiled as math
+     I = \frac{V}{R} =
+     \frac{110}{18.272} = 6.02 amps
+    \end{equation} 
+    
+    \section{RLC In Series} % creates a section  
+A circuit containing a resistor of 7ohm, an inductor with an inductance of 0.08H and a capacitor with a capacitance of 450uf is connected in series across a 220v @ 50hz supply. Calculate the impedance of the circuit at this frequency.
+
+	R = \SI{7}{\ohm}
+	
+	l = \SI{0.08}{\henry}
+	
+	C= \SI{450}{\milli\farad}
+	
+\begin{circuitikz}[scale=2.5]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s220@50Hz$, i^>=$I_s$] (0,2) -- 
+(0,2)to[C=$C\SI{450}{\micro\farad}$] (2,2) -- 
+(2,2)to[L=$L\SI{0.08}{\henry}$] (2,0) --
+(2,0)to[R, l_=$R\SI{7}{\ohm}$] (0,0)
+;\end{circuitikz}
+
+\begin{equation} % Creates an equation environment and is compiled as math
+     Xl = 2\pi fl = 
+     2*\pi * 50 * 0.08 = \SI{25.132}{\ohm} 
+    \end{equation}	
+	
+    
+\begin{equation} % Creates an equation environment and is compiled as math
+     Xc = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000450} = \SI{7.073}{\ohm}
+    \end{equation}	
+ 
+         \begin{equation} % Creates an equation environment and is compiled as math
+  Xt = \sqrt R^2+(Xl-Xc)^2 =
+  \sqrt 7^2+(25.132-7.073)^2 =
+  \SI{19.3682}{\ohm}
+    \end{equation}  
+ \pagebreak   
+    
+    \section{RLC In Series} % creates a section  
+A coil of resistance 8 ohms and inductance of 0.15H is connected in series with a capacitor of capacitance 74uf across 240V @ 50 Hz supply. Calculate the current flowing in the circuit?
+
+
+	R = \SI{8}{\ohm}
+	
+	l = \SI{0.15}{\henry}
+	
+	C= \SI{74}{\milli\farad}
+
+
+\begin{circuitikz}[scale=2.5]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s240@50Hz$, i^>=$I_s$] (0,2) -- 
+(0,2)to[C=$C\SI{74}{\micro\farad}$] (2,2) -- 
+(2,2)to[L=$L\SI{0.15}{\henry}$] (2,0) --
+(2,0)to[R, l_=$R\SI{8}{\ohm}$] (0,0)
+;\end{circuitikz}	
+	
+\begin{equation} % Creates an equation environment and is compiled as math
+     Xl = 2\pi fl = 
+     2*\pi * 50 * 0.15 = \SI{47.123}{\ohm} 
+    \end{equation}
+    
+  
+    
+\begin{equation} % Creates an equation environment and is compiled as math
+     Xc = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000074} = \SI{43.01}{\ohm}
+    \end{equation}
+    
+
+ 
+         \begin{equation} % Creates an equation environment and is compiled as math
+  Xt = \sqrt R^2+(Xl-Xc)^2 =
+  \sqrt 8^2+(47.123-43.01)^2 =
+  \SI{8.995}{\ohm}
+    \end{equation}  
+    
+    
+     \begin{equation} % Creates an equation environment and is compiled as math
+     I = \frac{V}{R} =
+     \frac{240}{8.995} = 26.68 amps
+    \end{equation} 
+	
+    \section{RLC In Series} % creates a section  
+A circuit containing a resistor of 8ohms, an inductor with an inductance value of 0.2H and a capacitor with capacitance value 80uF is connected in series across a supply the frequency is 50Hz, calculate the supply voltage if current taken is 10amps.
+
+
+	R = \SI{8}{\ohm}
+	
+	l = \SI{0.2}{\henry}
+	
+	C= \SI{80}{\micro\farad}
+
+\begin{circuitikz}[scale=2.5]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s?@50Hz$, i^>=$I_s$] (0,2) -- 
+(0,2)to[C=$C\SI{80}{\micro\farad}$] (2,2) -- 
+(2,2)to[L=$L\SI{0.2}{\henry}$] (2,0) --
+(2,0)to[R, l_=$R\SI{8}{\ohm}$] (0,0)
+;\end{circuitikz}	
+
+ \begin{equation} % Creates an equation environment and is compiled as math
+     Xl = 2\pi fl = 
+     2*\pi * 50 * 0.2 = \SI{62.83}{\ohm} 
+    \end{equation}
+    
+\begin{equation} % Creates an equation environment and is compiled as math
+     Xc = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000080} = \SI{39.78873}{\ohm}
+    \end{equation}    
+    
+         \begin{equation} % Creates an equation environment and is compiled as math
+  Xt = \sqrt R^2+(Xl-Xc)^2 =
+  \sqrt 8^2+(62.83-39.78873)^2 =
+  \SI{24.390}{\ohm}
+    \end{equation} 
+    
+   \begin{equation} % Creates an equation environment and is compiled as math
+     Vt = I * R =
+     10 * 24.390 = 243.9v
+    \end{equation} 
+
+    \section{RLC In Series} % creates a section  
+A circuit containing a resistor of 15ohms, an inductor with an inductance value of 0.06H and a capacitor with capacitance value 500uF is connected in series across a supply 230 @ 50Hz, calculate the supply current.
+
+
+	R = \SI{15}{\ohm}
+	
+	l = \SI{0.06}{\henry}
+	
+	C= \SI{500}{\micro\farad}  
+	
+\begin{circuitikz}[scale=2.5]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s230@50Hz$, i^>=$I_s$] (0,2) -- 
+(0,2)to[C=$C\SI{500}{\micro\farad}$] (2,2) -- 
+(2,2)to[L=$L\SI{0.06}{\henry}$] (2,0) --
+(2,0)to[R, l_=$R\SI{15}{\ohm}$] (0,0)
+;\end{circuitikz}
+  
+ \begin{equation} % Creates an equation environment and is compiled as math
+     Xl = 2\pi fl = 
+     2*\pi * 50 * 0.06 = \SI{18.83}{\ohm} 
+    \end{equation}
+    
+\begin{equation} % Creates an equation environment and is compiled as math
+     Xc = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000500} = \SI{6.3661}{\ohm}
+    \end{equation}    
+    
+         \begin{equation} % Creates an equation environment and is compiled as math
+  Xt = \sqrt R^2+(Xl-Xc)^2 =
+  \sqrt 15^2+(18.83-6.3661)^2 =
+  \SI{19.50}{\ohm}
+    \end{equation} 
+    
+     \begin{equation} % Creates an equation environment and is compiled as math
+     It = \frac{V}{R} =
+     \frac{230}{19.50} = 11.794 amps
+    \end{equation} 
+\pagebreak
+
+\section{RLC In Parallel} % creates a section
+A circuit containing a capacitor with capacitance of 55uF, a resistor of 40 ohm resistance and an inductor with an inductance value of 0.1H are connected in parallel across a 110V @ 50 Hz supply.  calculate current take from supply?
+
+
+	R = \SI{40}{\ohm}
+	
+	l = \SI{0.1}{\henry}
+	
+	C= \SI{55}{\micro\farad}
+	
+	v= 110
+	
+	f= 50
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 110@50$, i^>=$I_p$] (0,2)  
+(1,2)to[C=$C$,i>^=$I_C$,*-*] (1,0) 
+(1,0)to[short] (3,0) 
+(2,2)to[L=$L$,i>^=$I_L$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[R=$R$,i>^=$I_R$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+\begin{equation} % Creates an equation environment and is compiled as math
+     X_l = 2\pi fl = 
+     2*\pi * 50 * 0.1 = \SI{31.41}{\ohm} 
+    \end{equation}
+    
+\begin{equation} % Creates an equation environment and is compiled as math
+     X_c = \frac{1}{2\pi fC} = 
+     \frac{1}{2*\pi *50 * 0.000055} = \SI{57.87}{\ohm}
+    \end{equation}    
+    
+       \begin{equation} % Creates an equation environment and is compiled as math
+     I_r = \frac{V}{R} =
+     \frac{110}{40} = 2.75 amps
+    \end{equation} 
+    
+      \begin{equation} % Creates an equation environment and is compiled as math
+     I_l = \frac{V}{R} =
+     \frac{110}{31.41} = 3.50 amps
+    \end{equation}
+    
+           \begin{equation} % Creates an equation environment and is compiled as math
+     I_c = \frac{V}{R} =
+     \frac{110}{57.87} = 1.90 amps
+    \end{equation}
+    
+           \begin{equation} % Creates an equation environment and is compiled as math
+  I_t = \sqrt I_R^2+(I_l-I_c)^2 =
+  \sqrt 2.75^2+(3.50-1.90)^2 = 3.18 amps
+    \end{equation} 
+
+  
+\section{RLC In Parallel} % creates a section
+A resistor, inductor and capacitor are connected in parallel and the combination supplied from a 75v, 50Hz power supply as shown in the diagram below. From the details given in the diagram determine the power factor of the circuit and state wheather it is leading or lagging?
+
+
+	R = \SI{25}{\ohm}
+	
+	Xl = \SI{15}{\ohm}
+	
+	XC= \SI{12.5}{\ohm}
+	
+	v= 75
+	
+	f= 50Hz
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 75@50$, i^>=$I_p$] (0,2)  
+(1,2)to[C=$X_C$,i>^=$I_C$,*-*] (1,0) 
+(1,0)to[short] (3,0) 
+(2,2)to[L=$X_L$,i>^=$I_L$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[R=$R$,i>^=$I_R$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+      
+       \begin{equation} % Creates an equation environment and is compiled as math
+     I_r = \frac{V}{R} =
+     \frac{75}{25} = 3 amps
+    \end{equation} 
+       
+           \begin{equation} % Creates an equation environment and is compiled as math
+  I_t = \sqrt I_R^2+(I_l-I_c)^2 =
+  \sqrt 3^2+(5-6)^2 = 3.162 amps
+    \end{equation} 
+    
+        \begin{equation} % Creates an equation environment and is compiled as math
+     p.f = \frac{I_r}{I_t} =
+     \frac{3}{3.162} = 0.948 Leading
+    \end{equation}    
+    
+    
+
+\section{RLC In Parallel} % creates a section
+A parallel circuit supplied by a 230v, 50Hz and its associated phasor diagram(not to scale) are illustrated in the diagram below. Calculate the inductance L of the circuit?
+
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 230@50$, i^>=$I_p$] (0,2)  
+(1,2)to[C=$C$,i>^=$I_C$,*-*] (1,0) 
+(1,0)to[short] (3,0) 
+(2,2)to[L=$L$,i>^=$I_L$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[R=$R$,i>^=$I_R$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+\begin{tikzpicture}[scale=1][>=latex]
+\draw[style=help lines] (0,0) (3,2);
+
+\coordinate (vec1) at (300:1.5); 
+\coordinate (vec2) at (30:2.5);
+\coordinate (vec3) at (0:2.5);
+\coordinate (vec4) at (90:2);
+\coordinate (vec5) at (270:2);
+\coordinate (vec6) at (0:2.0);
+
+
+\draw[->,thick,black] (0,0) -- (vec6) node [below] {$11.5A$};
+\draw[->,thick,black] (0,0) -- (vec3) node [below] {};
+\draw[->,thick,black] (0,0) -- (vec4) node [above] {$9.2A$};
+\draw[->,thick,black] (0,0) -- (vec5) node [below] {$15.33A$};
+
+
+   
+\end{tikzpicture}   
+       \begin{equation} % Creates an equation environment and is compiled as math
+     R_l = \frac{V_s}{I_L} =
+     \frac{230}{15.33} = 15.00 ohms
+    \end{equation} 
+    
+       \begin{equation} % Creates an equation environment and is compiled as math
+     L = \frac{X_l}{2\pi f} =
+     \frac{15.00}{2*\pi*50} = 0.04774
+    \end{equation} 
+
+
+\section{RLC In Parallel} % creates a section
+A parallel circuit supplied by a 230v, 50Hz and its associated phasor diagram(not to scale) are illustrated in the diagram below. Calculate the capacitance C of the circuit?
+
+
+\begin{circuitikz}[scale=2]
+\ctikzset{resistor = european}\draw
+(0,0)to[sV=$V_s 230@50$, i^>=$I_p$] (0,2)  
+(1,2)to[C=$C$,i>^=$I_C$,*-*] (1,0) 
+(1,0)to[short] (3,0) 
+(2,2)to[L=$L$,i>^=$I_L$,*-*] (2,0)
+(0,0)to[short] (1,0)
+(3,2)to[R=$R$,i>^=$I_R$,*-*] (3,0)
+(0,2)to[short] (3,2)
+;\end{circuitikz}
+
+\begin{tikzpicture}[scale=1][>=latex]
+\draw[style=help lines] (0,0) (3,2);
+
+\coordinate (vec1) at (300:1.5); 
+\coordinate (vec2) at (30:2.5);
+\coordinate (vec3) at (0:2.5);
+\coordinate (vec4) at (90:2);
+\coordinate (vec5) at (270:2);
+\coordinate (vec6) at (0:2.0);
+
+
+\draw[->,thick,black] (0,0) -- (vec6) node [below] {$11.5A$};
+\draw[->,thick,black] (0,0) -- (vec3) node [below] {};
+\draw[->,thick,black] (0,0) -- (vec4) node [above] {$9.2A$};
+\draw[->,thick,black] (0,0) -- (vec5) node [below] {$15.33A$};
+
+
+   
+\end{tikzpicture}   
+       \begin{equation} % Creates an equation environment and is compiled as math
+     R_c = \frac{V_s}{I_L} =
+     \frac{230}{9.2} = 25.00 ohms
+    \end{equation} 
+    
+       \begin{equation} % Creates an equation environment and is compiled as math
+     C = \frac{1}{2\pi f X_c} =
+     \frac{1}{2*\pi*50*25.00} = 1.273
+    \end{equation} 
+ 
+\end{document} % This is the end of the document
+
